@@ -63,8 +63,25 @@ def getTermDatesFromFile(filename):
         termdates = list(itertools.chain(*terms))
         return termdates
     
-print(getTermDatesFromFile("term_dates.txt"))
 
-class weekCalc():
+class Week():
     def __init__(self) -> None:
         pass
+    
+class WeekGenerator():
+    dates = None
+    weekClass = None
+    def __init__(self, dates, weekClass) -> None:
+        self.dates = dates
+        self.weekClass = weekClass
+        self.make()
+    
+    def make(self):
+        pass
+
+
+dates = getTermDatesFromFile("term_dates.txt")
+
+weeks = WeekGenerator(dates, Week)
+
+print("weeks", weeks)
